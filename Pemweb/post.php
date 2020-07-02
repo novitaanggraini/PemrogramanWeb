@@ -1,3 +1,12 @@
+<?php
+
+include '../control/config.php'; 
+
+$id = $_GET['id'];
+
+$q  = mysqli_query($conn, "SELECT * FROM posting WHERE id_post='$id'") or die(mysqli_error($conn));
+$post = mysqli_fetch_array($q);
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,14 +18,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/fontawesome/css/all.css">
 
-    <title>Pejabat Struktural &#8211; Kejari Bangkalan</title>
+    <title><?php echo $post['judul']; ?>&#8211; Kejari Bangkalan</title>
     <link rel="icon" href="img/icon.png" sizes="32x32" />
 	<link rel='dns-prefetch' href='http://s.w.org/' />
       		<style >
 				hr {border: 1px solid white;}
   			</style>
   </head>
- <body style="background-color: #8a00e6;">
+<body style="background-color: #8a00e6;">
     <!-- ini Banner -->  
        <div class="container text-center" style="background-image: linear-gradient( to bottom left,#ff4d4d, #8a00e6);">
           <img src="img\banner.jpg " class= "my-2" >
@@ -29,7 +38,7 @@
     <nav class="navbar navbar-expand-lg navbar-light text-black" >
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mx-auto">
-                <li class="nav-item ">
+            <li class="nav-item ">
                   <a class="nav-link" href="index.php"><strong>BERANDA</strong><span class="sr-only">(current)</span></a>
                 </li>
             <li class="nav-item dropdown">
@@ -42,7 +51,7 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="strukturorganisasi.html">Struktur Organisasi</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item active" href="pejabat.html">Pejabat Struktural</a>
+                <a class="dropdown-item" href="pejabat.html">Pejabat Struktural</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="tugasdanwewenang.html">Tugas Pokok dan Wewenang</a>
                 <div class="dropdown-divider"></div>
@@ -114,112 +123,40 @@
                   <a href="index.html"><font color="grey">Home</font></a>
                 </span><i class="fa fa-angle-right"></i>
                   <span class="breadcrumb_last_link">
-                    <a href="pejabat.html"><font color="grey">Pejabat Struktural</font></a>
+                    <a href="beritatilang14feb.html"><font color="grey">Berita</font></a>
               </div>                            
         </div><br>
 
-        <div class="jeg_sharelist">
-            <a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.kejari-bangkalan.go.id%2Fpejabat-struktural%2F" rel='nofollow' >
-              <button  type="button" class="btn btn-primary" style="width:45%; background-color: #2f5cb6;"><i class="fab fa-facebook-square"></i><strong> &nbsp;Share on Facebook</strong></button>
-            </a>
-            <a href="https://twitter.com/intent/tweet?text=Pejabat+Struktural&amp;url=http%3A%2F%2Fwww.kejari-bangkalan.go.id%2Fpejabat-struktural%2F" rel='nofollow'  class="jeg_btn-twitter expanded">
-              <button  type="button" class="btn btn-primary" style="width:45%;;"><i class="fab fa-twitter"></i><strong> &nbsp;Share on Twitter</strong></button>
-            </a>
-            <a href="https://plus.google.com/share?url=http%3A%2F%2Fwww.kejari-bangkalan.go.id%2Fpejabat-struktural%2F" rel='nofollow'  class="jeg_btn-google-plus ">
-              <button  type="button" class="btn btn-danger" ><i class="fab fa-google-plus-g"></i></button>
-            </a>
-              <a href="https://www.linkedin.com/shareArticle?url=http%3A%2F%2Fwww.kejari-bangkalan.go.id%2Fpejabat-struktural%2F&amp;title=Pejabat+Struktural" rel='nofollow' >
-              <button  type="button" class="btn btn-primary"style="background-color: #0000e6;" ><i class="fab fa-linkedin-in"></i></button>
-              </a>
-        </div> <br>     
+                <div class="sharelist">
+                    <a href=http://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.kejari-bangkalan.go.id%2Finformasi-putusan-denda-tilang-tanggal-21-pebruari-2020%2F rel='nofollow'>
+                      <button  type="button" class="btn btn-primary" style="width:45%; background-color: #2f5cb6;"><i class="fab fa-facebook-square"></i><strong> &nbsp;Share on Facebook</strong></button>
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?text=Visi+dan+Misi&amp;url=http%3A%2F%2Fwww.kejari-bangkalan.go.id%2Finformasi-putusan-denda-tilang-tanggal-21-pebruari-2020%2F" rel='nofollow'>
+                      <button  type="button" class="btn btn-primary" style="width:45%;;"><i class="fab fa-twitter"></i><strong> &nbsp;Share on Twitter</strong></button>
+                    </a>
+                    <a href="https://plus.google.com/share?url=http%3A%2F%2Fwww.kejari-bangkalan.go.id%2Finformasi-putusan-denda-tilang-tanggal-21-pebruari-2020%2F" rel='nofollow'>
+                      <button  type="button" class="btn btn-danger" ><i class="fab fa-google-plus-g"></i></button> 
+                    </a>
+                    <a href="https://www.linkedin.com/shareArticle?url=http%3A%2F%2Fwww.kejari-bangkalan.go.id%2Finformasi-putusan-denda-tilang-tanggal-21-pebruari-2020%2F&amp;title=informasi-putusan-denda-tilang-tanggal-21-pebruari-2020" rel='nofollow'>
+                      <button  type="button" class="btn btn-primary"style="background-color: #0000e6;" ><i class="fab fa-linkedin-in"></i></button>
+                    </a>
+                </div><br>
+
+
             <div class="entry-header">
-              <h1 class="post_title">Pejabat Struktural</h1>
+              <h1 class="post_title"><strong><?php echo $post['judul']; ?></strong></h1>
             </div>
             <br>
 
-          <div class="entry-content ">
-             <div class="content-inner">
-              <p style="text-align: center;"><strong><span style="color: #0000ff;">PEJABAT STRUKTURAL</span></strong></p>
-                <p style="text-align: center;"><strong><span style="color: #0000ff;">KEJAKSAAN NEGERI BANGKALAN</span></strong></p>
-                <p>Pejabat  Struktural yang bertanggungjawab atas pelaksanaan program serta Tugas Pokok  dari masing-masing jabatannya, yaitu :</p><br>
-              <ul class="list-unstyled">
-                <li class="media">
-                  <img class=" mr-3 alignnone wp-image-1307 size-medium" src="img/1.jpg" alt="" width="209" height="300"  sizes="(max-width: 209px) 100vw, 209px" alt="">
-                  <div class="media-body" class="mr-3" >
-                    <h6 style="text-align: center;"><strong>KEPALA KEJAKSAAN NEGERI BANGKALAN</strong><br/>
-                    <strong>EMANUEL AHMAD, SH.</strong><br/><br/></h6>
-                    <ul>
-                      <li style="text-align: justify;">Memimpin dan mengendalikan Kejaksaan Negeri dalam melaksanakan tugas, wewenang dan fungsi Kejaksaan di daerah hukumnya serta membina aparatur Kejaksaan di lingkungan Kejaksaan Negeri yang bersangkutan agar berdaya guna dan berhasil guna.</li>
-                      <li style="text-align: justify;">Melakukan dan atau mengendalikan kebijakan pelaksanaan penegakan hukum dan keadilan baik preventif maupun represif yang menjadi tanggung jawabnya di daerah hukum kejaksaan Negeri yang bersangkutan sesuai dengan peraturan perundang-undangan dan kebijaksanaan yang ditetapkan oleh Jaksa Agung;</li>
-                      <li style="text-align: justify;">Melakukan penyelidikan, penyidikan, prapenuntutan, pemeriksaan tambahan, penuntutan, eksekusi dan tindakan hukum lain berdasarkan peraturan perundang-undangan dan kebijaksanaan yang ditetapkan oleh Jaksa Agung;</li>
-                      <li style="text-align: justify;">Melakukan koordinasi penanganan perkara pidana tertentu dengan instansi terkait meliputi penyelidikan, penyidikan dan melaksanakan tugas-tugas yustisial lain berdasarkan peraturan perundang-undangan dan kebijaksanaan yang ditetapkan oleh Jaksa Agung;</li>
-                  </div>
-                </li>
-                    <ul>
-                      <li style="text-align: justify;">Melakukan pencegahan dan pelarangan terhadap orang yang terlibat dalam suatu perkara pidana untuk masuk kedalam atau keluar meninggalkan wilayah kekuasaan Negara Republik Indonesia, peredaran barang cetakan yang dapat mengganggu ketertiban umum, penyalahgunaan dan atau penodaan agama serta pengawasan aliran kepercayaan yang dapat membahayakan ketertiban masyarakat dan negara berdasarkan peraturan perundang-undangan dan kebijaksanaan yang ditetapkan oleh Jaksa Agung;</li>
-                      <li style="text-align: justify;">Melakukan tindakan hukum di bidang perdata dan tata usaha negara, mewakili pemerintah dan negara, BUMN, BUMD di dalam dan diluar pengadilan sebagai usaha menyelamatkan kekayaan negara berdasarkan peraturan perundang-undangan dan kebijaksanaan yang ditetapkan oleh Jaksa Agung;</li>
-                      <li style="text-align: justify;">Membina dan melakukan kerjasama dengan lembaga negara, instansi pemerintah dan organisasi lain di daerah hukumnya untuk memecahkan masalah yang timbul terutama yang menyangkut tanggung jawabnya;</li>
-                      <li style="text-align: justify;">Pemberian perijinan sesuai dengan bidang tugasnya dan melaksanakan tugas-tugas lain berdasarkan perundang-undangan dan kebijaksanaan umum yang ditetapkan oleh Jaksa Agung;</li>
-                      <li style="text-align: justify;">Bertanggungjawab terhadap pengelolaan data dan statistik kriminal serta penerapan dan pengembangan teknologi informasi di lingkungan Kejaksaan Negeri.</li>
-                    </ul><br><br>
-                <li class="media">
-                  <img class=" mr-3 alignnone wp-image-1307 size-medium" src="img/2.jpg" alt="" width="209" height="300"  sizes="(max-width: 209px) 100vw, 209px" alt="">
-                  <div class="media-body" class="mr-3" >
-                    <h6 style="text-align: center;"><strong>KASUBAG PEMBINAAN</strong><br/>
-                    <strong>SAMSUL HADI, SH.</strong><br/><br/></h6>
-                    <p style="text-align: justify;">Subbagian Pembinaan mempunyai tugas melakukan pembinaan atas manajemen dan pembangunan prasarana dan sarana, pengelolaan ketatausahaan kepegawaian kesejahteraan pegawai, keuangan, perlengkapan organisasi dan tatalaksana, pengelolaan teknis atas milik negara yang menjadi tanggung jawabnya, pengelolaan data dan statistik kriminal serta penerapan dan pengembangan teknologi informasi, pemberian dukungan pelayanan teknis dan administrasi bagi seluruh satuan kerja dilingkungan Kejaksaan Negeri yang bersangkutan dalam rangka memperlancar pelaksanaan tugas.</p>
-                  </div>
-                </li><br><br>
-                <li class="media">
-                  <img class=" mr-3 alignnone wp-image-1307 size-medium" src="img/3.jpg" alt="" width="209" height="300"  sizes="(max-width: 209px) 100vw, 209px" alt="">
-                  <div class="media-body" class="mr-3" >
-                    <h6 style="text-align: center;"><strong>KASI INTELIJEN</strong><br/>
-                    <strong>PUTU ARYA WIBISANA, SH.</strong><br/><br/></h6>
-                    <p>Seksi Intelijen adalah unsur pembantu pimpinan mempunyai tugas dan wewenang :</p>
-                    <ul>
-                    <li style="text-align: justify;">Melakukan kegiatan    intelijen penyelidikan, pengamanan dan penggalangan untuk melakukan pencegahan tindak pidana guna mendukung penegakan hukum baik preventif maupun represif di bidang ideologi, politik, ekonomi, keuangan, sosial budaya, pertahanan dan keamanan, melaksanakan cegah tangkal terhadap orang-orang tertentu dan/atau turut menyelenggarakan ketertiban dan ketentraman umum dan penanggulangan tindak pidana serta perdata dan tata usaha negara di daerah hukumnya;</li>
-                    <li style="text-align: justify;">Memberikan dukungan intelijen Kejaksaan bagi keberhasilan tugas dan kewenangan Kejaksaan, melakukan kerjasama dan koordinasi serta pemantapan kesadaran hukum masyarakat di daerah hukumnya.</li>
-                    </ul>
-                  </div>
-                </li><br><br>
-                <li class="media">
-                  <img class=" mr-3 alignnone wp-image-1307 size-medium" src="img/4.jpg" alt="" width="209" height="300"  sizes="(max-width: 209px) 100vw, 209px" alt="">
-                  <div class="media-body" class="mr-3" >
-                    <h6 style="text-align: center;"><strong>KASI PIDUM</strong><br/>
-                    <strong>CHOIRUL ARIFIN, SH.</strong><br/><br/></h6>
-                    <p style="text-align: justify;">Seksi Tindak Pidana Umum mempunyai tugas melaksanakan pengendalian, prapenuntutan, pemeriksaan tambahan, penuntutan, penetapan hakim dan putusan pengadilan, pengawasan terhadap pelaksanaan pidana bersyarat, pidana pengawasan, pengawasan terhadap pelaksanaan putusan lepas bersyarat dan tindakan hukum lainnya dalam perkara tindak pidana umum.</p>
-                  </div>
-                </li><br><br>
-                <li class="media">
-                  <img class=" mr-3 alignnone wp-image-1307 size-medium" src="img/5.jpg" alt="" width="209" height="300"  sizes="(max-width: 209px) 100vw, 209px" alt="">
-                  <div class="media-body" class="mr-3" >
-                    <h6 style="text-align: center;"><strong>KASI PIDSUS</strong><br/>
-                    <strong>MOHAMMAD IQBAL FIRDAOZI, S.H., M.H.</strong><br/><br/></h6>
-                    <p style="text-align: justify;">Seksi Tindak Pidana Khusus mempunyai tugas melaksanakan pengendalian kegiatan penyelidikan, penyidikan, pra penuntutan, pemeriksaan tambahan, penuntutan, pelaksanaan penetapan hakim dan putusan pengadilan yang telah mempunyai kekuatan hukum tetap, upaya hukum, pengawasan terhadap pelaksanaan pidana bersyarat, lepas bersyarat dan putusan pidana pengawasan serta tindakan hukum lainnya. dalam perkara tindak pidana khusus.</p>
-                  </div>
-                </li><br><br>
-                <li class="media">
-                  <img class=" mr-3 alignnone wp-image-1307 size-medium" src="img/6.jpg" alt="" width="209" height="300"  sizes="(max-width: 209px) 100vw, 209px" alt="">
-                  <div class="media-body" class="mr-3" >
-                    <h6 style="text-align: center;"><strong>KASI DATUN</strong><br/>
-                    <strong>HERMAN HIDAYAT, SH.</strong><br/><br/></h6>
-                    <p style="text-align: justify;">Seksi Perdata dan Tata Usaha Negara mempunyai tugas melakukan dan atau pengendalian kegiatan penegakan, bantuan, pertimbangan dan tindakan hukum lain dalam mewakili kepentingan negara, pemerintah, BUMN dan BUMD serta pelayanan hukum kepada masyarakat, di bidang perdata dan tata usaha negara.</p>
-                  </div>
-                </li><br><br>
-                <li class="media">
-                  <img class=" mr-3 alignnone wp-image-1307 size-medium" src="img/7.jpg" alt="" width="209" height="300"  sizes="(max-width: 209px) 100vw, 209px" alt="">
-                  <div class="media-body" class="mr-3" >
-                    <h6 style="text-align: center;"><strong>KASI PENGELOLAAN BARANG BUKTI</strong><br/>
-                    <strong>RADEN BAGUS EKA PERWIRA, SH. MH.</strong><br/><br/></h6>
-                  </div>
-                </li><br><br>
 
-              </ul>
+          <div class="entry-content ">      
+            <div class="content-inner ml-4">
+              <h2 style="text-align: left;"><span class="t_title"><img class="size-medium wp-image-718 aligncenter" src="../control/img/<?php echo $post['foto']; ?>" alt="" width="600" height="600"  sizes="(max-width: 300px) 100vw, 300px" /></span></h2> <br>
+              <?php echo $post['body']; ?>
+                          <br/><br>
+   </div></div>
 
-              </div>
-          </div>
-          <br>
-          <br>
+
     </div>
 
     <!-- Ini- Footer -->

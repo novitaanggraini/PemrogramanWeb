@@ -1,3 +1,13 @@
+<?php
+
+include '../control/config.php'; 
+
+
+$q  = mysqli_query($conn, "SELECT * FROM video ORDER BY id_video DESC") or die(mysqli_error($conn));
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,21 +19,18 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/fontawesome/css/all.css">
 
-    <title>Bantuan Hukum dan Pelayanan Online &#8211; Kejari Bangkalan</title>
+    <title>Video &#8211; Kejari Bangkalan</title>
     <link rel="icon" href="img/icon.png" sizes="32x32" />
-	<link rel='dns-prefetch' href='http://s.w.org/' />
-      		<style >
-				hr {border: 1px solid white;}
-  			</style>
+	  <link rel='dns-prefetch' href='http://s.w.org/' />
   </head>
-<body style="background-color: #8a00e6;">
+  <body style="background-color: #8a00e6;">
     <!-- ini Banner -->  
-       <div class="container text-center" style="background-image: linear-gradient( to bottom left,#ff4d4d, #8a00e6);">
-          <img src="img\banner.jpg " class= "my-2" >
-      </div>
+    	 <div class="container text-center" style="background-image: linear-gradient( to bottom left,#ff4d4d, #8a00e6);">
+    	    <img src="img\banner.jpg " class= "my-2" >
+    	</div>
       <div class="container text-center" style="background-image: linear-gradient( #ff1a1a, #8a00e6);">
           <img src="img\jumbobanner.jpg" class = "img-fluid">
-      </div>  
+      </div>	
     <!-- ini Navbar -->
     <div class = "container" style="background-image: linear-gradient(to right, #ff1a1a, #8a00e6);">
     <nav class="navbar navbar-expand-lg navbar-light text-black" >
@@ -59,14 +66,14 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #00cc00 ;">
                 <a class="dropdown-item" href="photo.php">Photo</a>
                 <div class="dropdown-divider"></div>                
-                <a class="dropdown-item" href="video.php">Video</a>
+                <a class="dropdown-item active" href="video.php">Video</a>
               </div>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <strong> SIMANJA BANGKIT</strong>
                
               </a>
-<div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #00cc00 ;">
-                <a class="dropdown-item active" href="bantuanhukumdanpelayanan.html">Bantuan Hukum dan Pelayanan Online</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #00cc00 ;">
+                <a class="dropdown-item " href="bantuanhukumdanpelayanan.html">Bantuan Hukum dan Pelayanan Online</a>
                 <div class="dropdown-divider"></div>                
                 <a class="dropdown-item" href="Ambil-Tilang-Cepat-Tanpa-Pungli.html">Ambil Tilang Cepat Tanpa Pungli</a>
                 <div class="dropdown-divider"></div>
@@ -100,7 +107,7 @@
           </ul>
           <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="" aria-label="Search">
-        <button type="submit"><i class="fa fa-search"></i></button>
+   			<button type="submit"><i class="fa fa-search"></i></button>
           </form>
         </div>
       </div>
@@ -114,104 +121,98 @@
                   <a href="index.html"><font color="grey">Home</font></a>
                 </span><i class="fa fa-angle-right"></i>
                   <span class="breadcrumb_last_link">
-                    <a href="bantuanhukumdanpelayanan.html"><font color="grey">Bantuan Hukum Dan Pelayanan Online</font></a>
+                    <a href="video.html"><font color="grey">Video</font></a>
               </div>                            
         </div><br>
 
-                <div class="sharelist">
-                    <a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.kejari-bangkalan.go.id%2Fvisi-dan-misi%2F" rel='nofollow'>
-                      <button  type="button" class="btn btn-primary" style="width:45%; background-color: #2f5cb6;"><i class="fab fa-facebook-square"></i><strong> &nbsp;Share on Facebook</strong></button>
-                    </a>
-                    <a href="https://twitter.com/intent/tweet?text=Visi+dan+Misi&amp;url=http%3A%2F%2Fwww.kejari-bangkalan.go.id%2Fvisi-dan-misi%2F" rel='nofollow'>
-                      <button  type="button" class="btn btn-primary" style="width:45%;;"><i class="fab fa-twitter"></i><strong> &nbsp;Share on Twitter</strong></button>
-                    </a>
-                    <a href="https://plus.google.com/share?url=http%3A%2F%2Fwww.kejari-bangkalan.go.id%2Fvisi-dan-misi%2F" rel='nofollow'>
-                      <button  type="button" class="btn btn-danger" ><i class="fab fa-google-plus-g"></i></button> 
-                    </a>
-                    <a href="https://www.linkedin.com/shareArticle?url=http%3A%2F%2Fwww.kejari-bangkalan.go.id%2Fvisi-dan-misi%2F&amp;title=Visi+dan+Misi" rel='nofollow'>
-                      <button  type="button" class="btn btn-primary"style="background-color: #0000e6;" ><i class="fab fa-linkedin-in"></i></button>
-                    </a>
-                </div><br>
-
-
-            <div class="entry-header" style="padding-left: 30px">
-              <h1 class="post_title">Bantuan Hukum dan Pelayanan Online</h1>
+        <div class="sharelist ">
+            <a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.kejari-bangkalan.go.id%2Ftentang-kami%2F" rel='nofollow'>
+              <button  type="button" class="btn btn-primary" style="width:45%; background-color: #2f5cb6;"><i class="fab fa-facebook-square"></i><strong> &nbsp;Share on Facebook</strong></button>
+            </a>
+            <a href="https://twitter.com/intent/tweet?text=Kata+Sambutan&amp;url=http%3A%2F%2Fwww.kejari-bangkalan.go.id%2Ftentang-kami%2F" rel='nofollow'>
+              <button  type="button" class="btn btn-primary" style="width:45%;;"><i class="fab fa-twitter"></i><strong> &nbsp;Share on Twitter</strong></button>
+            </a>
+            <a href="https://plus.google.com/share?url=http%3A%2F%2Fwww.kejari-bangkalan.go.id%2Ftentang-kami%2F" rel='nofollow'  >
+              <button  type="button" class="btn btn-danger" ><i class="fab fa-google-plus-g"></i></button>
+            </a>
+            <a href="https://www.linkedin.com/shareArticle?url=http%3A%2F%2Fwww.kejari-bangkalan.go.id%2Ftentang-kami%2F&amp;title=Kata+Sambutan" rel='nofollow'>
+              <button  type="button" class="btn btn-primary"style="background-color: #0000e6;" ><i class="fab fa-linkedin-in"></i></button>
+            </a>
+            <br>
+            <br>
+                
+            <div class="entry-header">
+              <h1 class="post_title">Video</h1>
             </div>
             <br>
-            <div class="jeg_featured featured_image"></div>
-               <div class="jeg_share_top_container">
-                <div class="jeg_share_button clearfix">
-                <div class="jeg_share_stats">
-                    
-                </div>
-                 </div>
-                </div>
+      </div>
 
-          <div class="entry-content " style="padding-left: 30px;">      
-            <div class="content-inner"> 
-                <p style="text-align: center;" ><img src="img/pelayanan1.jpg" alt="" width="900" height="1000"></p> <br>
-                <p style="text-align: center;" ><img src="img/pelayanan2.jpg" alt="" width="900" height="1400" ></p>
-                <p>Formulir Pelayanan Hukum dapat di <strong>Download</strong> di bawah ini :</p>
-                <a href="doc/Formulir-Pelkum.pdf"> Formulir Pelkum</a>
-                <p style="text-align: center;" ><img src="img/pelayanan3.jpg" alt="" width="900" height="700"></p> <br>
-                <p style="text-align: center;" ><img src="img/pelayanan4.jpg" alt="" width="900" height="700"></p> <br>
-                <p style="text-align: center;" ><img src="img/pelayanan5.jpg" alt="" width="900" height="1400" ></p>
-                <p>Formulir Pendampingan Hukum dapat di <strong>Download</strong> di bawah ini :</p>
-                <a href="doc/Formulir_Penkum.pdf"> Formulir Penkum</a>
-                 <br><br><br>
-           </div>
-         </div>
+              <div class="container">
+                <div class="container">
+                <?php 
+                  while ($post = mysqli_fetch_array($q)) {
+                  
+                   ?>
+                  <p><iframe src=<?php echo $post['video'];  ?> width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe><br />
+                  </iframe></p>
+                  <?php 
+                }
+                  ?>
 
+                  </div>
+
+
+              </div><br><br>
 
     </div>
 
-    <!-- Ini- Footer -->
+  	<!-- Ini- Footer -->
    <div class=container>
-    <footer class="footer bg-dark text-light container-fluid" pt- 5>
-      <div class="row">
-        <!-- footer left -->
-        <div class="col-md-auto ml-4"> 
-          <img src="img/LOGO.png" class= "img-fluid my-5 mx-4" width="50%" >
-          <p style="font-size: 14px;"><font color="grey">Jl. Soekarno Hatta, Kel. Mlajah, Kec. Bangkainfo@lan,<br /> Kabupaten Bangkalan,<br /> Jawa Timur 69116 </font></p>
-        <font color="grey" style="font-size: 14px;">WEBSITE KEJAKSAAN NEGERI BANGKALAN </font>
-        <p style="font-size: 14px;"><font color="grey">www.kejari-bangkalan.go.id<br />
-        FACEBOOK : Kejari bangkalan<br />
-        INSTAGRAM : kejaribangkalan<br />
-        SMS CENTER / PENGADUAN : 085748165352<br />
-        WHATSAPP PENGADUAN LAYANAN : 085748165352<br />
-        Telepon Kantor : 031-3095026<br />
-        Fax Kantor : 031-3095026 </font></p>
-        </div>
-        <!-- footer center -->
-      <div class="col-md-5 mt-5">
-          <h6 class="footer"><span style="color: #e6005c;"><strong>Categories</strong></span></h6>
-            <div class="container" style="list-style-type: none;">
-            <div class="row"  >
-              <div class="col">
-                <li class="cat-item cat-item-43"><a href="#" class="text-light">Berita</a></li>
-              </div>
-              <div class="col">
-                <li class="cat-item cat-item-44"><a href="#" class="text-light" >Pengumuman</a></li>
-              </div>
-              <div class="col">
-                <li class="cat-item cat-item-46"><a href="#" class="text-light" >Uncategorized</a></li>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col ">
-                <li class="cat-item cat-item-45"><a href="#" class="text-light">Daftar Tilang</a></li>
-              </div>
-              <div class="col">
-                <li class="cat-item cat-item-1"><a href="#"class="text-light" >Slide</a></li>
-              </div>
-              <div class="col">
-                <li class="cat-item cat-item-47"><a href="#" class="text-light">Video</a></li>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- footer right -->
-      <div class="col-md-auto mt-5">
+  	<footer class="footer bg-dark text-light container-fluid" pt- 5>
+  		<div class="row">
+  			<!-- footer left -->
+  			<div class="col-md-auto ml-4"> 
+  				<img src="img/LOGO.png" class= "img-fluid my-5 mx-4" width="50%" >
+  				<p style="font-size: 14px;"><font color="grey">Jl. Soekarno Hatta, Kel. Mlajah, Kec. Bangkainfo@lan,<br /> Kabupaten Bangkalan,<br /> Jawa Timur 69116 </font></p>
+				<font color="grey" style="font-size: 14px;">WEBSITE KEJAKSAAN NEGERI BANGKALAN </font>
+				<p style="font-size: 14px;"><font color="grey">www.kejari-bangkalan.go.id<br />
+				FACEBOOK : Kejari bangkalan<br />
+				INSTAGRAM : kejaribangkalan<br />
+				SMS CENTER / PENGADUAN : 085748165352<br />
+				WHATSAPP PENGADUAN LAYANAN : 085748165352<br />
+				Telepon Kantor : 031-3095026<br />
+				Fax Kantor : 031-3095026 </font></p>
+  			</div>
+  			<!-- footer center -->
+ 			<div class="col-md-5 mt-5">
+  				<h6 class="footer"><span style="color: #e6005c;"><strong>Categories</strong></span></h6>
+  					<div class="container" style="list-style-type: none;">
+					  <div class="row"  >
+					    <div class="col">
+					      <li class="cat-item cat-item-43"><a href="#" class="text-light">Berita</a></li>
+					    </div>
+					    <div class="col">
+					      <li class="cat-item cat-item-44"><a href="#" class="text-light" >Pengumuman</a></li>
+					    </div>
+					    <div class="col">
+					      <li class="cat-item cat-item-46"><a href="#" class="text-light" >Uncategorized</a></li>
+					    </div>
+					  </div>
+					  <div class="row">
+					    <div class="col ">
+					      <li class="cat-item cat-item-45"><a href="#" class="text-light">Daftar Tilang</a></li>
+					    </div>
+					    <div class="col">
+					      <li class="cat-item cat-item-1"><a href="#"class="text-light" >Slide</a></li>
+					    </div>
+					    <div class="col">
+					      <li class="cat-item cat-item-47"><a href="#" class="text-light">Video</a></li>
+					    </div>
+					  </div>
+					</div>
+  			</div>
+  			<!-- footer right -->
+			<div class="col-md-auto mt-5">
                             <div class="footer_widget widget_fbw_id" id="fbw_id-2">
                                 <div class="jeg_footer_heading jeg_footer_heading_1">
                                     <h6 class="jeg_footer_title" style="color: #e6005c;" ><span><strong>Like Us On Facebook</strong></span></h6>
@@ -224,12 +225,12 @@
                       
                                 </div>
       
-        </div>
-      </div>
+  			</div>
+  		</div>
 
                     <!-- secondary footer right -->
 
-          <div class="sub-footer d-lg-flex justify-content-lg-between border-top pt-3 pb-4 mt-4 align-items-center">
+  				<div class="sub-footer d-lg-flex justify-content-lg-between border-top pt-3 pb-4 mt-4 align-items-center">
                     <p class="copyright" > © 2018 <a href="#" title="Kejari Bangkalan" class="border-left">Kejari Bangkalan</a>   </p>
 
                     <!-- secondary footer left -->
@@ -243,7 +244,7 @@
                 </div>
                 </div>     
                 </div> 
-    </footer>
+  	</footer>
   </div>
   	<!-- penutup footer -->
 
